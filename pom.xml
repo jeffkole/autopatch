@@ -24,8 +24,8 @@
     <inceptionYear>2004</inceptionYear>
 
     <properties>
-        <source.jdk>1.4</source.jdk>
-        <target.jdk>1.4</target.jdk>
+        <source.jdk>1.5</source.jdk>
+        <target.jdk>1.5</target.jdk>
         <unit.tests.pattern>**/*Test.java</unit.tests.pattern>
         <integration.tests.pattern>
             **/MigrationUnlockTest.java,**/MultiNodeAutoPatchTest.java,**/MissingPatchMigrationRunnerStrategyIntegrationTest.java
@@ -121,6 +121,15 @@
 
         <!-- Plugins configuration -->
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>${source.jdk}</source>
+                    <target>${target.jdk}</target>
+                </configuration>
+            </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
